@@ -19,7 +19,7 @@
         />
 
     <FrameLayout
-        android:id="@+id/gameFL"
+        android:id="@+id/gameFl"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         app:layout_constraintStart_toStartOf="parent"

@@ -8,6 +8,7 @@ import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
+import br.edu.scl.ifsp.sdm.fastcalculation.Settings
 import br.edu.scl.ifsp.sdm.fastcalculation.Extras.EXTRA_SETTINGS
 import br.edu.scl.ifsp.sdm.fastcalculation.databinding.ActivityGameBinding
 
@@ -29,7 +30,8 @@ class GameActivity : AppCompatActivity() {
         }
 
         settings = intent.getParcelableExtra(EXTRA_SETTINGS) ?: Settings()
-        Toast.makeText(this, settings.toString(), Toast.LENGTH_SHORT).show()
+
+        supportFragmentManager.beginTransaction().replace(R.id.gameFl, WelcomeFragment.newInstance(settings)).commit()
     }
 
     override fun onCreateOptionsMenu(menu: Menu?): Boolean {
@@ -40,7 +42,6 @@ class GameActivity : AppCompatActivity() {
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         return when (item.itemId) {
             R.id.restartGameMi -> {
-                // Lógica para reiniciar o jogo
                 true
             }
             R.id.exitMi -> {
