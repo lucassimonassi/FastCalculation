@@ -1,6 +1,8 @@
 package br.edu.scl.ifsp.sdm.fastcalculation
 
 import android.os.Bundle
+import android.view.Menu
+import android.view.MenuItem
 import android.widget.Toast
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
@@ -28,5 +30,26 @@ class GameActivity : AppCompatActivity() {
 
         settings = intent.getParcelableExtra(EXTRA_SETTINGS) ?: Settings()
         Toast.makeText(this, settings.toString(), Toast.LENGTH_SHORT).show()
+    }
+
+    override fun onCreateOptionsMenu(menu: Menu?): Boolean {
+        menuInflater.inflate(R.menu.menu_game, menu)
+        return true
+    }
+
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        return when (item.itemId) {
+            R.id.restartGameMi -> {
+                // Lógica para reiniciar o jogo
+                true
+            }
+            R.id.exitMi -> {
+                finish()
+                true
+            }
+            else -> {
+                false
+            }
+        }
     }
 }
