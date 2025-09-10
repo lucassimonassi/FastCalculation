@@ -24,7 +24,6 @@
         android:inputType="textPersonName"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintTop_toBottomOf="@id/gameTbIn"
         />
 
@@ -44,7 +43,50 @@
         android:entries="@array/rounds"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/roundsTV"
+        />
+
+    <TextView
+        android:id="@+id/roundsIntervalTv"
+        style="@style/SettingsView"
+        android:labelFor="@id/roundIntervalRg"
+        android:text="@string/round_interval"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/roundsSp"
         />
+
+    <RadioGroup
+        android:id ="@+id/roundIntervalRg"
+        style="@style/SettingsView"
+        android:orientation="horizontal"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/roundsIntervalTv">
+
+    <RadioButton
+        android:id="@+id/intervalOneRb"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:text="@string/one" />
+
+    <RadioButton
+        android:id="@+id/intervalThreeRb"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:text="@string/three" />
+
+    <RadioButton
+        android:id="@+id/intervalFiveRb"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:text="@string/five" />
+
+    </RadioGroup>
+
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>
