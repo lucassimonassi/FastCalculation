@@ -13,3 +13,26 @@
 .externalNativeBuild
 .cxx
 local.properties
+
+# Built application files
+*.apk
+*.ap_
+*.aab
+
+# Files for the ART compiler
+/data/
+/dist/
+/intermediates/
+/dex/
+/r8/
+
+# Gradle files
+.gradle/
+/build/
+local.properties
+.DS_Store
+*.iml
+
+# Android Studio
+.idea/
+.idea_config/
