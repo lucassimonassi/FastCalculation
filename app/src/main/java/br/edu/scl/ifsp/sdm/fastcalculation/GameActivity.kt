@@ -3,16 +3,11 @@ package br.edu.scl.ifsp.sdm.fastcalculation
 import android.os.Bundle
 import android.view.Menu
 import android.view.MenuItem
-import android.widget.Toast
-import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
-import androidx.core.view.ViewCompat
-import androidx.core.view.WindowInsetsCompat
-import br.edu.scl.ifsp.sdm.fastcalculation.Settings
 import br.edu.scl.ifsp.sdm.fastcalculation.Extras.EXTRA_SETTINGS
 import br.edu.scl.ifsp.sdm.fastcalculation.databinding.ActivityGameBinding
 
-class GameActivity : AppCompatActivity() {
+class GameActivity : AppCompatActivity(), OnPlayGame {
     private val activityGameBinding: ActivityGameBinding by lazy {
         ActivityGameBinding.inflate(layoutInflater)
     }
@@ -52,5 +47,9 @@ class GameActivity : AppCompatActivity() {
                 false
             }
         }
+    }
+
+    override fun onPlayGame() {
+        supportFragmentManager.beginTransaction().replace(R.id.gameFl, GameFragment.newInstance(settings)).commit()
     }
 }

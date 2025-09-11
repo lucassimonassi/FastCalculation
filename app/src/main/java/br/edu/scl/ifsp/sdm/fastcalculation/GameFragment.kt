@@ -1,7 +1,6 @@
 package br.edu.scl.ifsp.sdm.fastcalculation
 
 import android.os.Bundle
-import android.os.Parcelable
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
@@ -33,7 +32,7 @@ class GameFragment : Fragment() {
 
     companion object {
         @JvmStatic
-        fun newInstance() =
+        fun newInstance(settings: Settings) =
             GameFragment().apply {
                 arguments = Bundle().apply {
                     putParcelable(EXTRA_SETTINGS, settings )
